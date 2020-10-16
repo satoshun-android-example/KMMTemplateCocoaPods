@@ -6,10 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.kmmtemplate.shared.GithubApi
 import com.example.kmmtemplate.shared.Greeting
-import io.ktor.client.*
-import io.ktor.client.engine.okhttp.*
-import io.ktor.client.features.json.*
-import io.ktor.client.features.json.serializer.*
+import io.ktor.client.HttpClient
+import io.ktor.client.engine.okhttp.OkHttp
+import io.ktor.client.features.json.JsonFeature
+import io.ktor.client.features.json.serializer.KotlinxSerializer
+import kotlinx.serialization.json.Json
 
 fun greet(): String {
   return Greeting().greeting()
@@ -25,9 +26,12 @@ class MainActivity : AppCompatActivity() {
 
     val gitHubApi = GithubApi(
       httpClient = HttpClient(OkHttp) {
+        engine {
+        }
+
         install(JsonFeature) {
           serializer = KotlinxSerializer(
-            json = kotlinx.serialization.json.Json {
+            json = Json {
               ignoreUnknownKeys = true
             }
           )
