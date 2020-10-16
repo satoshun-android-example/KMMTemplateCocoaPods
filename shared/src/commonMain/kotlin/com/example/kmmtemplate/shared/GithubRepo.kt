@@ -6,10 +6,11 @@ import io.ktor.http.*
 import kotlinx.serialization.Required
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.Transient
 
 @Serializable
 data class GithubRepo(
-  @SerialName("name") val name: String = ""
+  @SerialName("name") val name: String = "default"
 )
 
 class GithubApi(
