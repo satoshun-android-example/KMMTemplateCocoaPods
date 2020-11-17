@@ -2,12 +2,13 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
   kotlin("multiplatform")
+  kotlin("native.cocoapods")
 
   id("com.android.library")
   id("kotlin-android-extensions")
   id("kotlinx-serialization")
 }
-group = "com.example.kmmtemplate"
+group = "com.example.kmmtemplate.cocoapods"
 version = "1.0-SNAPSHOT"
 
 val coroutineVersion = "1.4.0"

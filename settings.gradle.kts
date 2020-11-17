@@ -18,4 +18,4 @@ rootProject.name = "KMMTemplate"
 
 include(":androidApp")
 include(":shared")
-
+include(":cocoapodsshared")
