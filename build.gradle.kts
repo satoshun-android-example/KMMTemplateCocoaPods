@@ -9,6 +9,7 @@ buildscript {
     classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.10")
     classpath("org.jetbrains.kotlin:kotlin-serialization:1.4.10")
     classpath("com.android.tools.build:gradle:4.1.1")
+    classpath("co.touchlab:kotlinnativecocoapods:0.11")
   }
 }
 group = "com.example.kmmtemplate"

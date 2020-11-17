@@ -1,18 +1,18 @@
 Pod::Spec.new do |spec|
     spec.name                     = 'cocoapodsshared'
     spec.version                  = '1.0-SNAPSHOT'
-    spec.homepage                 = ''
+    spec.homepage                 = 'http://satoshun.github.io/'
     spec.source                   = { :git => "Not Published", :tag => "Cocoapods/#{spec.name}/#{spec.version}" }
     spec.authors                  = ''
     spec.license                  = ''
-    spec.summary                  = ''
+    spec.summary                  = 'sample Cocoapods'
 
     spec.static_framework         = true
-    spec.vendored_frameworks      = "build/cocoapods/framework/cocoapodsshared.framework"
+    spec.vendored_frameworks      = "build/cocoapods/framework/shared.framework"
     spec.libraries                = "c++"
     spec.module_name              = "#{spec.name}_umbrella"
 
-                
+    spec.ios.deployment_target = '13.4'
 
                 
 
