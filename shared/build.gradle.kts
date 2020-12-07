@@ -10,9 +10,10 @@ plugins {
 group = "com.example.kmmtemplate"
 version = "1.0-SNAPSHOT"
 
-val coroutineVersion = "1.4.0"
+val coroutineVersion = "1.4.1"
 val serializationVersion = "1.0.1"
 val ktorVersion = "1.4.1"
+val datetimeVersion = "0.1.1"
 
 repositories {
   gradlePluginPortal()
@@ -39,6 +40,8 @@ kotlin {
 
         implementation("io.ktor:ktor-client-core:$ktorVersion")
         implementation("io.ktor:ktor-client-serialization:$ktorVersion")
+
+        implementation("org.jetbrains.kotlinx:kotlinx-datetime:$datetimeVersion")
       }
     }
     val commonTest by getting {
