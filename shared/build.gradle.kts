@@ -20,6 +20,7 @@ repositories {
   google()
   jcenter()
   mavenCentral()
+  maven(url = "https://kotlin.bintray.com/kotlinx/")
 }
 kotlin {
   android()
@@ -41,7 +42,7 @@ kotlin {
         implementation("io.ktor:ktor-client-core:$ktorVersion")
         implementation("io.ktor:ktor-client-serialization:$ktorVersion")
 
-        implementation("org.jetbrains.kotlinx:kotlinx-datetime:$datetimeVersion")
+//        implementation("org.jetbrains.kotlinx:kotlinx-datetime:$datetimeVersion")
       }
     }
     val commonTest by getting {

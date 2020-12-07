@@ -25,6 +25,8 @@ class MainActivity : AppCompatActivity() {
     val tv: TextView = findViewById(R.id.text_view)
     tv.text = greet()
 
+    Greeting().greeting()
+
     val okHttpClient = OkHttpClient.Builder()
       .addInterceptor(SampleInterceptor)
       .build()
