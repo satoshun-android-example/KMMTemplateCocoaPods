@@ -6,6 +6,8 @@ plugins {
   id("com.android.library")
   id("kotlin-android-extensions")
   id("kotlinx-serialization")
+
+  id("com.vanniktech.maven.publish")
 }
 group = "com.example.kmmtemplate"
 version = "1.0-SNAPSHOT"
