@@ -1,20 +1,20 @@
 Pod::Spec.new do |spec|
     spec.name                     = 'cocoapodsshared'
     spec.version                  = '1.0-SNAPSHOT'
-    spec.homepage                 = 'http://satoshun.github.io/'
+    spec.homepage                 = 'https://github.com/Kotlin/kotlin-with-cocoapods-sample'
     spec.source                   = { :git => "Not Published", :tag => "Cocoapods/#{spec.name}/#{spec.version}" }
     spec.authors                  = ''
     spec.license                  = ''
-    spec.summary                  = 'sample Cocoapods'
+    spec.summary                  = 'Kotlin sample project with CocoaPods dependencies'
 
     spec.static_framework         = true
-    spec.vendored_frameworks      = "build/cocoapods/framework/shared.framework"
+    spec.vendored_frameworks      = "build/cocoapods/framework/cocoapodsshared.framework"
     spec.libraries                = "c++"
     spec.module_name              = "#{spec.name}_umbrella"
 
-    spec.ios.deployment_target = '13.4'
+    spec.ios.deployment_target = '13.5'
 
-                
+    spec.dependency 'AFNetworking', '~> 4.0'
 
     spec.pod_target_xcconfig = {
         'KOTLIN_TARGET[sdk=iphonesimulator*]' => 'ios_x64',

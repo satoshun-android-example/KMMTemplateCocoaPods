@@ -1,11 +1,11 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+
 plugins {
   kotlin("multiplatform")
+  kotlin("native.cocoapods")
 
   id("com.android.library")
-  id("kotlin-android-extensions")
   id("kotlinx-serialization")
-
-  id("co.touchlab.native.cocoapods")
 }
 group = "com.example.kmmtemplate.cocoapods"
 version = "1.0-SNAPSHOT"
@@ -23,19 +23,24 @@ repositories {
 kotlin {
   android()
 
-  val onPhone = System.getenv("SDK_NAME")?.startsWith("iphoneos") ?: false
-  if (onPhone) {
-    iosArm64("ios")
-  } else {
-    iosX64("ios")
-  }
-  cocoapodsext {
-    summary = "Common library"
-    homepage = "http://satoshun.github.io/"
-    framework {
-      isStatic = false
-      transitiveExport = true
-    }
+  val iosTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget =
+    if (System.getenv("SDK_NAME")?.startsWith("iphoneos") == true)
+      ::iosArm64
+    else
+      ::iosX64
+
+  iosTarget("ios") {}
+
+  cocoapods {
+    summary = "Kotlin sample project with CocoaPods dependencies"
+    homepage = "https://github.com/Kotlin/kotlin-with-cocoapods-sample"
+
+    ios.deploymentTarget = "13.5"
+
+    pod("AFNetworking") { version = "~> 4.0" }
+//    pod("RxSwift") { version = "~> 6.0" }
+//    pod("RxCocoa") { version = "~> 6.0" }
+//    pod("RxRelay") { version = "~> 6.0" }
   }
 
   sourceSets {

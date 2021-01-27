@@ -1,9 +1,9 @@
 use_frameworks!
 
-platform :ios, '13.4'
-
-install! 'cocoapods', :deterministic_uuids => false
+platform :ios, '13.5'
 
 target 'iosApp' do
     pod 'cocoapodsshared', :path => '../cocoapodsshared'
+
+    pod 'AFNetworking', '~> 4.0'
 end

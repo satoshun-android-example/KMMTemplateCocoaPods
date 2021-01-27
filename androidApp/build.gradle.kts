@@ -14,8 +14,7 @@ repositories {
 }
 
 dependencies {
-  implementation(project(":shared"))
-//  implementation(project(":cocoapodsshared"))
+  implementation(project(":cocoapodsshared"))
 
   implementation("com.google.android.material:material:1.2.1")
   implementation("androidx.appcompat:appcompat:1.2.0")
