@@ -1,5 +1,5 @@
 import SwiftUI
-import shared
+import cocoapodsshared
 
 func greet() -> String {
     return Greeting().greeting()
