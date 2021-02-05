@@ -10,9 +10,9 @@ plugins {
 group = "com.example.kmmtemplate.cocoapods"
 version = "1.0-SNAPSHOT"
 
-val coroutineVersion = "1.4.0"
+val coroutineVersion = "1.4.2-native-mt"
 val serializationVersion = "1.0.1"
-val ktorVersion = "1.4.1"
+val ktorVersion = "1.5.1"
 
 repositories {
   gradlePluginPortal()
